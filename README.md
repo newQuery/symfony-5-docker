@@ -16,13 +16,17 @@ $ git clone https://github.com/eko/docker-symfony.git
 
 Next, put your Symfony application into `symfony` folder and do not forget to add `symfony.localhost` in your `/etc/hosts` file.
 
-Make sure you adjust `database_host` in `parameters.yml` to the database container alias "db" (for Symfony < 4)
 Make sure you adjust `DATABASE_URL` in `env` to the database container alias "db" (for Symfony >= 4)
 
 Then, run:
 
 ```bash
 $ docker-compose up
+```
+
+```bash
+$ docker-compose exec php sh
+$ composer install
 ```
 
 You are done, you can visit your Symfony application on the following URL: `http://symfony.localhost` (and access Kibana on `http://symfony.localhost:81`)
